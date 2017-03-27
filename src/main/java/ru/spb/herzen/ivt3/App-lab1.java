@@ -7,21 +7,15 @@ public class App
     public static void main( String[] args )
     {
         System.out.println();
-        RandomNameGenerator rand = new RandomNameGenerator();
-
-        String name = rand.next();
-        System.out.println( "Hello, " + name + "\n" );
-
-        System.out.println( "Задание 1" );
-        for(int i=0; i<4; i++){
-            name = rand.next();
-            System.out.println( "Hello, " + name );
+       Thread myThready = new Thread();
+        myThready.start();
+         try {
+            myThready.join();
+             } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
-        System.out.println( "\nЗадание 2" );
-        for(int i=0; i<15; i++){
-            name = rand.next();
-            System.out.println( "Hello, " + name );
-        }
+        System.out.println();
+    Thread firstThread = new FirstThread();
+      secondThread.start();  
     }
 }
